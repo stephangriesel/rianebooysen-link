@@ -1,0 +1,20 @@
+---
+type Props = {
+  data: {
+    name: string;
+    icon: string;
+    link: string;
+    status: string;
+  };
+};
+
+const { data } = Astro.props;
+---
+
+<ul>
+  <li class="p-1">
+    <a href={data.link}>
+      <i class={data.icon}></i>
+    </a>
+  </li>
+</ul>

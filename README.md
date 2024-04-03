@@ -1,4 +1,4 @@
-# stephangriesel.com
+# rianebooysen.com
 
 ## CMS
 
@@ -18,6 +18,7 @@ https://developers.google.com/apps-script/guides/web
 2. Clear cell
 
 ### Example sheet:
+
 ```
 The status enabled can be cleared and only applies if header hero needs to be displayed
 ```
@@ -30,7 +31,9 @@ LinkedIn,fab fa-linkedin fa-2x,https://www.yourlink.com, enabled
 GitHub,fab fa-github fa-2x,https://www.yourlink.com, enabled
 ```
 
-### Apps Script example:
+<details>
+  <summary>Technical Details</summary>
+  ### Apps Script example:
 
 ```
 function doGet() {
@@ -49,6 +52,8 @@ function doGet() {
   return ContentService.createTextOutput(JSON.stringify({data:result})).setMimeType(ContentService.MimeType.JSON);
 }
 ```
+
+</details>
 
 <details>
   <summary>Change Log</summary>

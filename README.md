@@ -1,11 +1,5 @@
 # rianebooysen.com
 
-## CMS
-
-### Documentation link:
-
-https://developers.google.com/apps-script/guides/web
-
 ### How to edit script:
 
 1. Go to sheet file
@@ -33,8 +27,6 @@ GitHub,fab fa-github fa-2x,https://www.yourlink.com, enabled
 
 <details>
   <summary>Technical Details</summary>
-  ### Apps Script example:
-
 ```
 function doGet() {
   const doc = SpreadsheetApp.getActiveSpreadsheet();
@@ -52,11 +44,11 @@ function doGet() {
   return ContentService.createTextOutput(JSON.stringify({data:result})).setMimeType(ContentService.MimeType.JSON);
 }
 ```
+More details here: https://developers.google.com/apps-script/guides/web
 
 </details>
 
 <details>
   <summary>Change Log</summary>
-  14/03 - Add changelog
-  19/03 - DB test in /db, title update main page
+  03/04/2024 - Dynamically render page title 
 </details>

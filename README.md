@@ -50,5 +50,6 @@ More details here: https://developers.google.com/apps-script/guides/web
 
 <details>
   <summary>Change Log</summary>
+  04/04/2024 - Clear data
   03/04/2024 - Dynamically render page title 
 </details>

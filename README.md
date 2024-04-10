@@ -29,20 +29,36 @@ GitHub,fab fa-github fa-2x,https://www.yourlink.com, enabled
   <summary>Technical Details</summary>
 ```
 function doGet() {
+  // Get a reference to the active spreadsheet
   const doc = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = doc.getSheetByName("Social");
-  // range: starts at column and row 1, check over 6 rows, and check 4 columns
-  const values = sheet.getRange(1, 1, 6, 4).getDisplayValues();
-  // console.log("check values",values);
-  const result = values.map((s) => ({
-    name: s[0],
-    icon: s[1],
-    link: s[2],
-    status: s[3],
-  }));
-  console.log("check result",result);
-  return ContentService.createTextOutput(JSON.stringify({data:result})).setMimeType(ContentService.MimeType.JSON);
+  console.log("Active Spreadsheet:", doc.getName()); // Log the active spreadsheet name
+
+// Get a reference to the sheet named "Social"
+const sheet = doc.getSheetByName("Social");
+console.log("Sheet object:", sheet); // Log the sheet object itself
+
+// Retrieve values from a range of cells:
+// - Starts at cell A1 (column 1, row 1)
+// - Includes 10 rows
+// - Includes 6 columns
+const values = sheet.getRange(1, 1, 10, 6).getDisplayValues();
+console.log("Retrieved values:", values); // Log the retrieved 2D array of values
+
+// Transform the 2D array of values into an array of objects:
+const result = values.map((s) => ({
+name: s[0],
+icon: s[1],
+link: s[2],
+status: s[3],
+description: s[4],
+iconDescription: s[5],
+}));
+console.log("Transformed result:", result); // Log the final array of objects
+
+// Create a JSON response containing the transformed data:
+return ContentService.createTextOutput(JSON.stringify({data: result})).setMimeType(ContentService.MimeType.JSON);
 }
+
 ```
 More details here: https://developers.google.com/apps-script/guides/web
 
@@ -50,5 +66,7 @@ More details here: https://developers.google.com/apps-script/guides/web
 
 <details>
   <summary>Change Log</summary>
-  03/04/2024 - Dynamically render page title 
+  03/04/2024 - Dynamically render page title
+  07/04/2024 - New columns add, style
 </details>
+```

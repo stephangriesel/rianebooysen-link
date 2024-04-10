@@ -5,12 +5,11 @@ type Props = {
     icon: string;
     link: string;
     status: string;
+    description: string;
   };
 };
 
 const { data } = Astro.props;
-console.log("check data hero", data);
-console.log("check data status", data.status);
 ---
 
 <div>
@@ -18,7 +17,7 @@ console.log("check data status", data.status);
     data.status === "enabled" && (
       <img
         src={data.link}
-        class="object-cover object-center rounded-full h-128 border-4"
+        class="object-cover object-center rounded-full border-4 w-80 h-80"
         alt="hero"
       />
     )

@@ -60,6 +60,9 @@ return ContentService.createTextOutput(JSON.stringify({data: result})).setMimeTy
 }
 
 ```
+
+```
+
 More details here: https://developers.google.com/apps-script/guides/web
 
 </details>

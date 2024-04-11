@@ -66,12 +66,8 @@ More details here: https://developers.google.com/apps-script/guides/web
 
 <details>
   <summary>Change Log</summary>
-<<<<<<< HEAD
-  03/04/2024 - Dynamically render page title
-  07/04/2024 - New columns add, style
-=======
   04/04/2024 - Clear data
-  03/04/2024 - Dynamically render page title 
->>>>>>> 17bea43e8a1509c4cd1f406e1c44c95db9c1b808
+  03/04/2024 - Dynamically render page title
+  10/04/2024 - Update border
 </details>
 ```

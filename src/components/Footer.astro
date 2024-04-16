@@ -1,5 +1,26 @@
-<footer class="bg-theme-base text-sm">
-  <div class="container grid place-items-center p-2">
-    <p>Copyright &copy; {new Date().getFullYear()} Dev Links</p>
-  </div>
-</footer>
+---
+type Props = {
+  data: {
+    name: string;
+    icon: string;
+    link: string;
+    status: string;
+    description: string;
+    iconDescription: string;
+  };
+};
+
+const { data } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<div class="mt-5">
+  {
+    data.status === "enabled" && (
+      <footer class="flex text-sm">
+        <span class="ml-1 mr-1">&copy;</span>
+        <span class="ml-1 mr-1">{currentYear}</span>
+      </footer>
+    )
+  }
+</div>

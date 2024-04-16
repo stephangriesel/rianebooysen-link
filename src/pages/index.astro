@@ -3,20 +3,22 @@ import Hero from "../components/Hero.astro";
 import SocialLinks from "../components/SocialLinks.astro";
 import Title from "../components/Title.astro";
 import Description from "../components/Description.astro";
+import Footer from "../components/Footer.astro";
+import Tagline from "../components/Tagline.astro";
 
 // FAKE DATA FOR TESTING
 // const data = [
-//   { name: "Hero", icon: "", link: "", status: "enabled", description: "", iconDescription: "", },
-//   { name: "Facebook", icon: "", link: "", status: "disabled", description: "", iconDescription: "", },
-//   { name: "Instagram", icon: "", link: "", status: "disabled", description: "", iconDescription: "",},
-//   { name: "X", icon: "", link: "", status: "disabled", description: "", },
-//   { name: "LinkedIn", icon: "fab fa-linkedin fa-2x", link: "", status: "disabled", description: "", iconDescription: "",},
-//   { name: "BeReal", icon: "", link: "", status: "disabled", description: "", iconDescription: "",},
-//   { name: "GitHub", icon: "fab fa-github fa-2x", link: "", status: "disabled", description: "", iconDescription: "", },
+//   { name: "Hero", icon: "", link: "", status: "enabled", description: "", iconDescription: "", tagline: "" },
+//   { name: "Facebook", icon: "", link: "", status: "disabled", description: "", iconDescription: "", tagline: ""},
+//   { name: "Instagram", icon: "", link: "", status: "disabled", description: "", iconDescription: "", tagline: ""},
+//   { name: "X", icon: "", link: "", status: "disabled", description: "",tagline: "" },
+//   { name: "LinkedIn", icon: "fab fa-linkedin fa-2x", link: "", status: "disabled", description: "", iconDescription: "",tagline: ""},
+//   { name: "BeReal", icon: "", link: "", status: "disabled", description: "", iconDescription: "",tagline: ""},
+//   { name: "GitHub", icon: "fab fa-github fa-2x", link: "", status: "disabled", description: "", iconDescription: "",tagline: "" },
 // ];
 
 const res = await fetch(
-  "https://script.google.com/macros/s/AKfycbz82tYlJJeSqmpXuuaXrxSs6MMWwq4rckj9Swma0dC1HTlc0AretZOsVd0hqVIzD7OP/exec"
+  "https://script.google.com/macros/s/AKfycbxNcetFDqLQmMcmIUXAYjhTCK39m0-w8T4drLWdghpbEvPuOkc2T4cD0xcQWeuOjN20/exec"
 );
 
 const { data } = await res.json();
@@ -24,6 +26,7 @@ console.log("check data index", data);
 console.log("check data index name", data[0].name);
 console.log("check data description", data[0].description);
 console.log("check data icon description", data[2].iconDescription);
+console.log("check data tagline", data[0].tagline);
 
 const pageTitle = data[0].name;
 ---
@@ -41,38 +44,38 @@ const pageTitle = data[0].name;
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=PT+Sans+Narrow:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>{pageTitle}</title>
   </head>
-  <body
-    class="grid place-items-center min-h-screen bg-gradient-to-br from-blue-950 via-indigo-200 to-blue-100"
-  >
-    <section class="grid place-items-center min-h-screen">
+  <body class="grid place-items-center min-h-screen bg-slate-200">
+    <section class="grid place-items-center">
       <div>
         {data.map((i: (typeof data)[0]) => <Hero data={i} />)}
       </div>
       <h1 class="text-2xl">
         {data.map((i: (typeof data)[0]) => <Title data={i} />)}
       </h1>
+      <h2 class="text-1xl">
+        {data.map((i: (typeof data)[0]) => <Tagline data={i} />)}
+      </h2>
       <p class="text-1xl">
         {data.map((i: (typeof data)[0]) => <Description data={i} />)}
       </p>
       <div>
-        <div class="flex flex-col">
+        <div class="flex flex-col mt-10">
           {data.map((i: (typeof data)[0]) => <SocialLinks data={i} />)}
         </div>
       </div>
-      <footer class="flex text-sm">
-        <span class="ml-1 mr-1"
-          >{data.map((i: (typeof data)[0]) => <Title data={i} />)}</span
-        >
-        <span class="ml-1 mr-1">&copy;</span>
-        <span class="ml-1 mr-1">
-          <script is:inline>
-            new Date().getFullYear() > 2010 &&
-              document.write(" " + new Date().getFullYear());
-          </script></span
-        >
-      </footer>
+      <div>
+        <div class="flex flex-col">
+          {data.map((i: (typeof data)[0]) => <Footer data={i} />)}
+        </div>
+      </div>
     </section>
   </body>
 </html>

@@ -12,12 +12,12 @@ type Props = {
 const { data } = Astro.props;
 ---
 
-<div>
+<div class="mt-10">
   {
     data.status === "enabled" && (
       <img
         src={data.link}
-        class="object-cover object-center rounded-full border-4 w-80 h-80"
+        class="object-cover object-center rounded-full border-4 w-32 h-32"
         alt="hero"
       />
     )

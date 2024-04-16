@@ -18,14 +18,14 @@ const { data } = Astro.props;
     data && (
       <>
         {data.link && data.icon && data.iconDescription && (
-          <li class="p-1 m-1 h-12 flex bg-slate-200 justify-between items-center rounded-lg border-2 border-blue-900">
+          <li class="p-1 m-3 h-12 flex bg-neutral-100 justify-between items-center rounded-lg border-2 border-blue-900">
+            <span class="m-2">
+              <p>{data.iconDescription}</p>
+            </span>
             <span class="m-2">
               <a href={data.link}>
                 <i class={data.icon} />
               </a>
-            </span>
-            <span class="m-2">
-              <p>{data.iconDescription}</p>
             </span>
           </li>
         )}

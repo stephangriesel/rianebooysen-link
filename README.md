@@ -41,7 +41,7 @@ console.log("Sheet object:", sheet); // Log the sheet object itself
 // - Starts at cell A1 (column 1, row 1)
 // - Includes 10 rows
 // - Includes 6 columns
-const values = sheet.getRange(1, 1, 10, 6).getDisplayValues();
+const values = sheet.getRange(1, 1, 10, 7).getDisplayValues();
 console.log("Retrieved values:", values); // Log the retrieved 2D array of values
 
 // Transform the 2D array of values into an array of objects:
@@ -52,6 +52,7 @@ link: s[2],
 status: s[3],
 description: s[4],
 iconDescription: s[5],
+tagline: s[6],
 }));
 console.log("Transformed result:", result); // Log the final array of objects
 
@@ -72,5 +73,6 @@ More details here: https://developers.google.com/apps-script/guides/web
   04/04/2024 - Clear data
   03/04/2024 - Dynamically render page title
   10/04/2024 - Update border
+  14/04/2024 - Update design, add tagline
 </details>
 ```

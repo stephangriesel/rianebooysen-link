@@ -3,6 +3,11 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        oldstandard: ["Old Standard TT", "sans-serif"],
+        ptsansnarrow: ["PT Sans Narrow", "sans-serif"],
+      },
       height: {
         128: "32rem",
       },

@@ -16,8 +16,8 @@ const { data } = Astro.props;
 
 {
   data && data.status === "enabled" && (
-    <div class="m-3 font-bold">
-      <p class="font-poppins text-center mr-16 ml-16 leading-tight">
+    <div>
+      <p class="font-poppins font-thin text-center mr-16 ml-16 leading-tight text-sm uppercase text-blue-900">
         {data.tagline}
       </p>
     </div>

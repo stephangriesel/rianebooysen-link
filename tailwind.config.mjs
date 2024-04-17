@@ -8,6 +8,9 @@ export default {
         oldstandard: ["Old Standard TT", "sans-serif"],
         ptsansnarrow: ["PT Sans Narrow", "sans-serif"],
       },
+      fontWeight: {
+        thin: 300,
+      },
       height: {
         128: "32rem",
       },

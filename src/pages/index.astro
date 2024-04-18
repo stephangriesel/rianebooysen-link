@@ -5,20 +5,21 @@ import Title from "../components/Title.astro";
 import Description from "../components/Description.astro";
 import Footer from "../components/Footer.astro";
 import Tagline from "../components/Tagline.astro";
+import FooterImage from "../components/FooterImage.astro";
 
 // FAKE DATA FOR TESTING
 // const data = [
-//   { name: "Hero", icon: "", link: "", status: "enabled", description: "", iconDescription: "", tagline: "" },
-//   { name: "Facebook", icon: "", link: "", status: "disabled", description: "", iconDescription: "", tagline: ""},
-//   { name: "Instagram", icon: "", link: "", status: "disabled", description: "", iconDescription: "", tagline: ""},
-//   { name: "X", icon: "", link: "", status: "disabled", description: "",tagline: "" },
-//   { name: "LinkedIn", icon: "fab fa-linkedin fa-2x", link: "", status: "disabled", description: "", iconDescription: "",tagline: ""},
-//   { name: "BeReal", icon: "", link: "", status: "disabled", description: "", iconDescription: "",tagline: ""},
-//   { name: "GitHub", icon: "fab fa-github fa-2x", link: "", status: "disabled", description: "", iconDescription: "",tagline: "" },
+//   { name: "Hero", icon: "", link: "", status: "enabled", description: "", iconDescription: "", tagline: "", footerImage: "" },
+//   { name: "Facebook", icon: "", link: "", status: "disabled", description: "", iconDescription: "", tagline: "", footerImage: ""},
+//   { name: "Instagram", icon: "", link: "", status: "disabled", description: "", iconDescription: "", tagline: "", footerImage: ""},
+//   { name: "X", icon: "", link: "", status: "disabled", description: "",tagline: "", footerImage: "" },
+//   { name: "LinkedIn", icon: "fab fa-linkedin fa-2x", link: "", status: "disabled", description: "", iconDescription: "",tagline: "", footerImage: ""},
+//   { name: "BeReal", icon: "", link: "", status: "disabled", description: "", iconDescription: "",tagline: "", footerImage: ""},
+//   { name: "GitHub", icon: "fab fa-github fa-2x", link: "", status: "disabled", description: "", iconDescription: "",tagline: "", footerImage: "" },
 // ];
 
 const res = await fetch(
-  "https://script.google.com/macros/s/AKfycbxNcetFDqLQmMcmIUXAYjhTCK39m0-w8T4drLWdghpbEvPuOkc2T4cD0xcQWeuOjN20/exec"
+  "https://script.google.com/macros/s/AKfycbxWr6CAzJk2OEb9IhgQyMhXsY_AeN5lcw5uhmvkeyd6cZr2R2lq00svz4XEcJOAurw5/exec"
 );
 
 const { data } = await res.json();
@@ -71,9 +72,14 @@ const pageTitle = data[0].name;
           {data.map((i: (typeof data)[0]) => <SocialLinks data={i} />)}
         </div>
       </div>
-      <div>
+      <!-- <div>
         <div class="flex flex-col">
           {data.map((i: (typeof data)[0]) => <Footer data={i} />)}
+        </div>
+      </div> -->
+      <div>
+        <div class="flex flex-col">
+          {data.map((i: (typeof data)[0]) => <FooterImage data={i} />)}
         </div>
       </div>
     </section>

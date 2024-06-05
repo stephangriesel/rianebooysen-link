@@ -63,17 +63,16 @@ return ContentService.createTextOutput(JSON.stringify({data: result})).setMimeTy
 ```
 
 ```
-
 More details here: https://developers.google.com/apps-script/guides/web
 
 </details>
 
 <details>
   <summary>Change Log</summary>
-  04/04/2024 - Clear data
-  03/04/2024 - Dynamically render page title
-  10/04/2024 - Update border
-  14/04/2024 - Update design, add tagline
-  18/04/2024 - Logo add, links update
+  04/04/2024 - Clear data <br/>
+  03/04/2024 - Dynamically render page title <br/>
+  10/04/2024 - Update border <br/>
+  14/04/2024 - Update design, add tagline<br/>
+  18/04/2024 - Logo add, links update<br/>
 </details>
-```
+

@@ -74,5 +74,6 @@ More details here: https://developers.google.com/apps-script/guides/web
   10/04/2024 - Update border <br/>
   14/04/2024 - Update design, add tagline<br/>
   18/04/2024 - Logo add, links update<br/>
+  03/07/2024 - Add row for new social link<br />
 </details>
 

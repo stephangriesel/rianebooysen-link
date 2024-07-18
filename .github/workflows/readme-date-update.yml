@@ -1,21 +1,23 @@
 name: Update README with Current Date
-'on':
+on:
   push:
     branches:
       - master
 jobs:
   update_readme:
     runs-on: ubuntu-latest
+    env:
+      TODAY_DATE: $(date +"%Y-%m-%d")
     steps:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
       - name: Get current date
-        run: 'echo ::set-output name=DATE=$(date +"%Y-%m-%d")'
+        run: echo "Current date set as environment variable: $TODAY_DATE"
       - name: Update README
         run: |
           echo "Updating README..."
-          sed -i "s/linkjedateupdate/Today's date is: $DATE/g" README.md
+          sed -i "s/linkjedateupdate/Today's date is: $TODAY_DATE/g" README.md
       - name: Commit changes
         run: |
           git config --local user.name "GitHub Actions"

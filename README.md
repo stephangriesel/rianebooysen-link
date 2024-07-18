@@ -75,5 +75,6 @@ More details here: https://developers.google.com/apps-script/guides/web
   14/04/2024 - Update design, add tagline<br/>
   18/04/2024 - Logo add, links update<br/>
   03/07/2024 - Add row for new social link<br />
+  18/07/2024 - Linkje add
 </details>
 

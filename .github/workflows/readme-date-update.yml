@@ -13,7 +13,11 @@ jobs:
         with:
           node-version: 20
       - name: Get current date
-        run: 'echo "Current date set as environment variable: ${TODAY_DATE}"'
+        run: |
+          echo "Starting script"
+          echo "TODAY_DATE is: ${TODAY_DATE}"
+          echo "Running echo command: echo \"Current date set as environment variable: ${TODAY_DATE}\""
+          echo "Current date set as environment variable: ${TODAY_DATE}"
       - name: Update README
         run: |
           echo "Updating README..."

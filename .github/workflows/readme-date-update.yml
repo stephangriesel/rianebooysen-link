@@ -18,8 +18,6 @@ jobs:
           sed -i "s/linkjedateupdate/Today\'s date is: $TODAY_DATE/g" README.md
       - name: Commit changes
         run: |
-          git config --local user.name "GitHub Actions"
-          git config --local user.email "actions@github.com"
-          git add README.md
+          git add README_UPDATE.md
           git commit -m "Update README with current date"
           git push origin main

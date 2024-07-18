@@ -1,20 +1,35 @@
 name: Update README with Current Date
+
 on:
   push:
     branches:
       - master
+
 jobs:
   update_readme:
     runs-on: ubuntu-latest
-    env:
-      TODAY_DATE: $(date +"%Y-%m-%d")
+
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+
+      - name: Get current date
+        id: get_date
+        run: echo ::set-output name=DATE=$(date +"%d/%m/%Y")
+
+      - name: Update README
+        uses: actions/replace-text@v4
         with:
-          node-version: 20
-      #- name: Update README
-      #  run: |
-      #    echo "Updating README..."
-      #    sed -i "s/linkjedateupdate/Today\'s date is: $TODAY_DATE/g" README.md
-      - name: Check date
-        run: 'echo "Current date set as environment variable: ${TODAY_DATE}"'
+          path: README.md
+          replace: ''  # Replace placeholder with comment
+          replacement: |
+            <details>
+              <summary>Change Log</summary>
+              04/04/2024 - Clear data<br/>
+              03/04/2024 - Dynamically render page title<br/>
+              10/04/2024 - Update border<br/>
+              14/04/2024 - Update design, add tagline<br/>
+              18/04/2024 - Logo add, links update<br/>
+              03/07/2024 - Add row for new social link<br />
+              **$(date +"%d/%m/%Y")** - Linkje add  # Insert current date dynamically
+            </details>
+

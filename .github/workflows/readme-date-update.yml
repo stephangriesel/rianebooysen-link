@@ -2,7 +2,7 @@ name: Update README with Current Date
 
 on:
   push:
-    branches: [main]  # Update the branch name if needed
+    branches: [master]  # Update the branch name if needed
 
 jobs:
   update_readme:

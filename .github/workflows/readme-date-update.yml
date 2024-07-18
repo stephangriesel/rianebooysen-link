@@ -1,18 +1,17 @@
 name: Update README with Current Date
-
-on:
+'on':
   push:
-    branches: [master]  # Update the branch name if needed
-
+    branches:
+      - master
 jobs:
   update_readme:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: 20  
+          node-version: 20
       - name: Get current date
-        run: echo ::set-output name=DATE=$(date +"%Y-%m-%d")  # Capture date in YYYY-MM-DD format
+        run: 'echo ::set-output name=DATE=$(date +"%Y-%m-%d")'
       - name: Update README
         run: |
           echo "Updating README..."
